@@ -1,4 +1,6 @@
-#include "Cliente.h"
+#include "Cliente.hpp"
+#include "Funcionario.hpp"
+#include "Quartos.hpp"
 
 int main() 
 {

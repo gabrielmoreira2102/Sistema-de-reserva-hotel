@@ -1,5 +1,5 @@
-#ifndef Cliente_h
-#define Cliente_h
+#ifndef Cliente_hpp
+#define Cliente_hpp
 
 #include<iostream>
 using namespace std;
