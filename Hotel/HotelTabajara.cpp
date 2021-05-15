@@ -83,11 +83,11 @@ int  main ()
 			break;
 
 		case 0:
-        cout << "\nFinalizando sistema!\n\n" << endl;
+      cout << "\nFinalizando sistema!\n\n" << endl;
       break;
 
-      default:
-      	cout << "\n\nOpção invalida!\n\n" << endl;
+    default:
+     	cout << "\n\nOpção invalida!\n\n" << endl;
 		}
 	}
 }
