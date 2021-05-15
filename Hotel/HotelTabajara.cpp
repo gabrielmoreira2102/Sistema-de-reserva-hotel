@@ -7,15 +7,15 @@ int  main ()
 {
 	Reserva F;
 	
-	F. AddQuarto ();
-	F. AddFunc ( " Gabriel " , " 4567 " );
-	F. AddFunc ( " Bento " ,    " 1234 " );
-	F. AddFunc ( " Lucas " , " 9876 " );
+	F.AddQuarto();
+	F.AddFunc ( " Gabriel " , " 123456789 " );
+	F.AddFunc( " Bento " , " 987654321 " );
+	F.AddFunc( " Lucas " , " 123789456 " );
 
-	F. AddCli ( " Michele " , " 5555 " );
-	F. AddCli ( " Roberto " ,     " 9999 " );
-	F. AddCli ( " Carla " , " 4567 " );
-	F. AddCli ( " Gustavo " , " 6549 " );
+	F.AddCli( " Michele " , " 654879236 " );
+	F.AddCli( " Roberto " , " 7896535432 " );
+	F.AddCli( " Carla " , " 3256987589 " );
+	F.AddCli( " Gustavo " , " 9465873652 " );
 	cout << " \n\n  " << endl;
 	cout << " Bem Vindo ao Hotel TABAJARA: " << endl;
 	cout << " ******************* \n\n  " << endl;
@@ -68,7 +68,7 @@ int  main ()
 			cin >> Cli;
 			cout << " Nome do Atendente:: " << endl;
 			cin >> FU;
-			F. SetNovaReserva( " Tim " , " Alberto " );
+			F. SetNovaReserva( " Gumercindo " , " Jorge " );
 			break;
 
 		case 5:
@@ -81,6 +81,13 @@ int  main ()
 			cin >> b;
 			F. ConsultaQ(b);
 			break;
+
+		case 0:
+        cout << "\nFinalizando sistema!\n\n" << endl;
+      break;
+
+      default:
+      	cout << "\n\nOpção invalida!\n\n" << endl;
 		}
 	}
 }

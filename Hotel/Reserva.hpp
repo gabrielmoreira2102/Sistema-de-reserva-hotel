@@ -14,20 +14,23 @@ class Reserva
 {
 public:
 	Reserva();
+	Reserva(Data datas, int TotalReser, string Data_I, string Data_F);
 
 	int ID;
 	void AddFunc(string nome, string RG);
 	void AddCli(string nome, string RG);
-	int GetaID();
 	void SetNovaReserva(string cliente, string funcionario);
+	void ResInfo();
+	void teste();
+	void Info();
+	int GetaID();
+	void listagem();
 	void AddQuarto();
 	void ConsultaQ(int N);
-	void Info();
-	void teste();
-	void ResInfo();
 	void ListaQ();
-	void listagem();
-	
+	void setData();
+	Data getData();
+					
 private:
 	Data datas;
 	int TotalReser;

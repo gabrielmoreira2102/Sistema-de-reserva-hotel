@@ -8,7 +8,8 @@ using namespace std;
 class Data
 {
 public:
-    Data(int d, int m, int a, int t); 
+    Data();
+		Data(int d, int m, int a, int t); 
 
     void toString(int i);
     void setDia(int d);

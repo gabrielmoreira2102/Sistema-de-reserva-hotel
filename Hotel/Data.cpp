@@ -1,5 +1,10 @@
 #include "Data.hpp"
 
+Data::Data()
+{
+	
+}
+
 Data::Data(int d, int m, int a, int t)
 {
   dia = d;

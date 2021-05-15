@@ -1,7 +1,14 @@
 #include "Reserva.hpp"
+#include "Data.hpp"
 
 int ID = 0 ;
+
 Reserva::Reserva()
+{
+
+}
+
+void Reserva::setData()
 {
 	
 }
@@ -33,7 +40,6 @@ void Reserva::SetNovaReserva(string cliente, string funcionario)
 	cin >> ano;
 	cout << " \nNumero de dias: ";
 	cin >> tempo;
-
 	this->datas.setDia(dia);
 	this->datas.setMes(mes);
 	this->datas.setAno(ano);
@@ -103,6 +109,7 @@ void Reserva::SetNovaReserva(string cliente, string funcionario)
 		SetNovaReserva(cliente, funcionario);
 	}
 }
+
 void Reserva::ResInfo()
 {
 
@@ -167,16 +174,16 @@ void Reserva::listagem()
 
 void Reserva::AddQuarto()
 {
-	quartos[0].SetQuarto(1, " Normal " , 1 , 2 , 75 );
-	quartos[1].SetQuarto(2, " Normal " , 1 , 4 , 100 );
-	quartos[2].SetQuarto(3, " Normal " , 2 , 2 , 120 );
-	quartos[3].SetQuarto(4, " Normal " , 2 , 3 , 100 );
-	quartos[4].SetQuarto(5, " Normal " , 1 , 2 , 75 );
-	quartos[5].SetQuarto(6, " Normal " , 1 , 4 , 100 );
-	quartos[6].SetQuarto(7, " Luxo " , 1 , 4 , 200 );
-	quartos[7].SetQuarto(8, " Luxo " , 2 , 3 , 220 );
-	quartos[8].SetQuarto(9, " Luxo " , 2 , 2 , 230 );
-	quartos[9].SetQuarto(10, " Luxo " , 1 , 2 , 190 );
+	quartos[0].SetQuarto(1, " Normal " , 1 , 2 , 150 );
+	quartos[1].SetQuarto(2, " Normal " , 2 , 4 , 380 );
+	quartos[2].SetQuarto(3, " Normal " , 2 , 2 , 300 );
+	quartos[3].SetQuarto(4, " Normal " , 2 , 3 , 350 );
+	quartos[4].SetQuarto(5, " Normal " , 1 , 2 , 150 );
+	quartos[5].SetQuarto(6, " Normal " , 2 , 4 , 380 );
+	quartos[6].SetQuarto(7, " Luxo " , 2 , 4 , 500 );
+	quartos[7].SetQuarto(8, " Luxo " , 2 , 3 , 580 );
+	quartos[8].SetQuarto(9, " Luxo " , 2 , 2 , 430 );
+	quartos[9].SetQuarto(10, " Luxo " , 1 , 2 , 250 );
 }
 
 void Reserva::ConsultaQ(int N)
@@ -197,3 +204,4 @@ void Reserva::ListaQ()
 		quartos[i].Info();
 	}
 }
+
