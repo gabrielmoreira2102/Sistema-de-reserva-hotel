@@ -1,36 +1,41 @@
-#ifndef Reserva_hpp
-#define Reserva_hpp
+#ifndef Reserva_H
+#define Reserva_H
 
-#include <iostream>  
+#include "Quarto.hpp"
+#include "Cliente.hpp"
+#include "Funcionario.hpp"
+#include "Data.hpp"
+
+#include <vector>
+#include <iostream>
 using namespace std;
 
 class Reserva
 {
 public:
 	Reserva();
-  void dadosReserva();
-  void verificaStatus();
-  void escolheQuarto();
 
-	void setStatus(int s);
-  void setTipoQuarto(string tq);
-	void setNumCama(int nc);
-	void setTipoCama(string tc);
-	void setCliente();
+	int ID;
+	void AddFunc(string nome, string RG);
+	void AddCli(string nome, string RG);
+	int GetaID();
+	void SetNovaReserva(string cliente, string funcionario);
+	void AddQuarto();
+	void ConsultaQ(int N);
+	void Info();
+	void teste();
+	void ResInfo();
+	void ListaQ();
+	void listagem();
 	
-	void getStatus();
-	string getTipoQuarto();
-	int getNumCama();
-	string getTipoCama();
-	Cliente getCliente();
-
 private:
-  int status;
-	string tipoQuarto;
-	int numCama;
-	string tipoCama;
-	int periodo;
-	Cliente cliente;		
-};
+	Data datas;
+	int TotalReser;
+	string Data_I;
+	string Data_F;
+	Quarto quartos[10];
+	vector <Cliente> clientes;
+	vector <Funcionario> funcionarios;
 
-#endif 
+};
+# endif

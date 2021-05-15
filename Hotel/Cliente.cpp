@@ -1,44 +1,46 @@
 #include "Cliente.hpp"
 
-Cliente::Cliente()
+Cliente::Cliente(string Nome, string RG)
 {
-  Reservas() = 0;
+	this->Nome = Nome;
+	this->RG = RG;
+}
+void Cliente::Info()
+{
+	cout << " Nome: " << Nome << endl;
+	cout << " RG: " << RG << endl;
+	cout << " Numero de reservas: " << IDReserva.size() << endl;
+	for(int i=0; i<IDReserva.size(); i++)
+	{
+		cout << " ID reserva: " << IDReserva[i] << endl;
+	}
+	cout << " \n ";
 }
 
-void Cliente::dadosCliente()
+void Cliente::ImprimeNome()
 {
-	cout <<"\nNome do hospede: " << nome << endl;
-	cin >> nome;
-	cout << "Idade do hospede: " << idade << endl;
-	cin >> idade;
-	cout <<" CPF do hospede: " << cpf << endl;
-	cin >> cpf;
-	Cliente::setReservas(); 
+	cout << " Nome do Cliente: " << Nome << endl;
 }
 
-void Cliente::imprimeDados()
+string Cliente::GetNome()
 {
-  cout << "\nNome do hospede:  " << nome << endl;
-	cout << "Idade do hospede: " << idade << " anos" << endl;
-	cout <<" CPF do hospede: " << cpf << endl;
+	return Nome;
+}
+string Cliente::GetRG()
+{
+	return RG;
 }
 
-void Cliente::setNome(string n)
+int Cliente::GetNumReser()
 {
-	nome = n;
+	return IDReserva.size();
+}
+void Cliente::SetIdReserva(int ID)
+{
+	IDReserva.push_back(ID);
 }
 
-void Cliente::setCpf(int _cpf)
+int Cliente::GetIdReserva(int i)
 {
-	cpf = _cpf;
+	return IDReserva[i];
 } 
-
-void Cliente::setIdade(int _idade)
-{
-	idade = _idade;
-}
-
-void Cliente::setReservas(int res)
-{
-	reservas = _res;
-}
