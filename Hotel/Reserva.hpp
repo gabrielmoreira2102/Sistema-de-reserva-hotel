@@ -17,13 +17,13 @@ public:
 	Reserva(Data datas, int TotalReser, string Data_I, string Data_F);
 
 	int ID;
-	void AddFunc(string nome, string RG);
-	void AddCli(string nome, string RG);
+	void AddFunc(string nome, string CPF);
+	void AddCli(string nome, string CPF);
 	void SetNovaReserva(string cliente, string funcionario);
 	void ResInfo();
 	void teste();
 	void Info();
-	int GetaID();
+	int GetID();
 	void listagem();
 	void AddQuarto();
 	void ConsultaQ(int N);
@@ -36,7 +36,7 @@ private:
 	int TotalReser;
 	string Data_I;
 	string Data_F;
-	Quarto quartos[10];
+	Quarto quartos[5];
 	vector <Cliente> clientes;
 	vector <Funcionario> funcionarios;
 

@@ -1,15 +1,15 @@
 #include "Funcionario.hpp"
 
-Funcionario::Funcionario(string Nome, string RG)
+Funcionario::Funcionario(string Nome, string CPF)
 {
 	this->Nome = Nome;
-	this->RG = RG;
+	this->CPF = CPF;
 }
 
 void Funcionario::Info()
 {
 	cout << " Nome: " << Nome << endl;
-	cout << " RG: " << RG << endl;
+	cout << " CPF: " << CPF << endl;
 	cout << " Numero de reservas: " << IDReserva.size() << endl;
 	for(int i=0; i<IDReserva.size(); i++)
 	{
@@ -38,9 +38,9 @@ string Funcionario::GetNome()
 	return Nome;
 }
 
-string Funcionario::GetRG()
+string Funcionario::GetCPF()
 {
-	return RG;
+	return CPF;
 }
 
 int Funcionario::GetNumReser()

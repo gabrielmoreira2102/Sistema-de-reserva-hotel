@@ -17,7 +17,7 @@ public:
 	int GetCapacidade();
 	int GetNumero();
 	bool GetOcupado();
-	
+		
 private:
 	string Categoria;
 	int Valor;

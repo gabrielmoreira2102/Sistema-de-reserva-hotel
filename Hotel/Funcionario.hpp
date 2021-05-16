@@ -8,7 +8,7 @@ using namespace std;
 class Funcionario
 {
 public:
-	Funcionario(string Nome, string RG);
+	Funcionario(string Nome, string CPF);
 
 	void ImprimeNome();
 	void Info();
@@ -16,14 +16,14 @@ public:
 	void ResInfo(int Q);
 
 	string GetNome();
-	string GetRG();
+	string GetCPF();
 	int GetNumReser();
 	int GetQuartoNum(int i);
 	int GetIdReserva(int i);
 	
 private:
 	string Nome;
-	string RG;
+	string CPF;
 	vector <int> IDReserva;
 	vector <int> NumroQuarto;
 };

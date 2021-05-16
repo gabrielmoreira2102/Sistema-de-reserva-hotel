@@ -32,19 +32,16 @@ void Quarto::Info()
 	if(Camas == 1)
 	    cout << " Cama de casal " << endl;
 	else if(Camas == 2)
-		cout << " Cama de solteiro: " << endl;
+		cout << " Cama de solteiro " << endl;
 
 	cout << " Capacidade: " << Capacidade << endl;
-	if(Ocupado)
-	{
-		cout << " Ocupado " << endl;
-	} else cout << " Vago " << endl;
 }
 
 bool Quarto::GetOcupado ()
 {
 	return Ocupado;
 }
+
 bool Quarto::SetOcupado ()
 {
 	Ocupado =! Ocupado;

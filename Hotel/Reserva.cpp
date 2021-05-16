@@ -13,76 +13,64 @@ void Reserva::setData()
 	
 }
 
-void Reserva::AddFunc(string nome, string RG)
+void Reserva::AddFunc(string nome, string CPF)
 {
-	funcionarios.push_back(Funcionario(nome, RG));
-	cout << " Funcionario adicionado com sucesso: " << nome << " RG: " << RG << endl;
+	funcionarios.push_back(Funcionario(nome, CPF));
+	cout << " Funcionario adicionado com sucesso: " << nome << " CPF: " << CPF << endl;
 }
 
-void Reserva::AddCli(string nome, string RG)
+void Reserva::AddCli(string nome, string CPF)
 {
-  clientes.push_back(Cliente(nome, RG));
-	 cout << " Cliente adicionado com sucesso: " << nome << " RG: " << RG << endl;
+  clientes.push_back(Cliente(nome, CPF));
+	 cout << " Cliente adicionado com sucesso: " << nome << " CPF: " << CPF << endl;
 }
 
 void Reserva::SetNovaReserva(string cliente, string funcionario)
 {
 	int a, b, c, contagem = 0 ;
 	int dia, mes, ano, tempo;
-	cout << " Data de inicio da reserva: " << endl;
-	cout << " \n Numero de dias: ";
-	cin >> tempo;
-	cout << " Dia: ";
-	cin >> dia;
-	cout << " \nMes: ";
-	cin >> mes;
-	cout << " \nAno: ";
-	cin >> ano;
-	cout << " \nNumero de dias: ";
-	cin >> tempo;
 	this->datas.setDia(dia);
 	this->datas.setMes(mes);
 	this->datas.setAno(ano);
 	this->datas.setTempo(tempo);
-	
-	cout << " Tipo de quarto desejado 1:Luxo - 2:Normal " << endl;
-	cin >> a;
-
-	if (a == 1 || a == 2 )
-	{
-		cout << " Escolha a capacidade do Quarto: (Maximo 4) " << endl;
-		cin >> b;
-		if (b <= 4 )
+	cout << "\nData de inicio da reserva" << endl;
+	cout << "\nDia: "; cin >> dia;
+	cout << "\nMes: "; cin >> mes;
+	cout << "\nAno: "; cin >> ano;
+	cout << "\nNumero de dias: "; cin >> tempo;
+	cout << "\nTipo de quarto desejado 1:Luxo - 2:Normal "; cin >> a;
+		if (a == 1 || a == 2 )
 		{
-			for(int i=0; i<10; i++)
+			cout << "Escolha a capacidade do Quarto: (Maximo 4) "; cin >> b;
+			if (b <= 4 )
 			{
-
-				if (quartos[i].GetCapacidade() == b && quartos[i].GetOcupado() == false && quartos[i].GetCamas() == a)
+				for(int i=0; i<5; i++)
 				{
-					contagem ++;
-					cout << " Quartos disponiveis: " << endl;
-					quartos[i].Info();
+					if (quartos[i].GetCapacidade() == b && quartos[i].GetOcupado() == false && quartos[i].GetCamas() == a)
+					{
+						contagem ++;
+						cout << "\nQuartos disponiveis\n" << endl;
+						quartos[i].Info();
+						cout << "\n" << endl;
+					}
+				}
+				if (contagem == 0)
+				{
+					cout << "\nNao ha Quartos disponiveis!!!" << endl;
+					SetNovaReserva(cliente, funcionario);
 				}
 			}
-			if (contagem == 0)
-			{
-				cout << " Nao ha Quartos disponiveis: " << endl;
-				SetNovaReserva(cliente, funcionario);
+			else{
+				cout << "numero invalido: " << endl;
 			}
-		}
 		
-		{
-			cout << " numero invalido: " << endl;
-			SetNovaReserva (cliente, funcionario);
-		}
-		cout << " Selecione quarto atravez do seu numero: " << endl;
-		cin >> c;
-		for(int i=0; i<10; i++)
+		cout << " Selecione quarto pelo numero: "; cin >> c;
+		for(int i=0; i<5; i++)
 		{
 			if(quartos[i].GetNumero() == c && quartos[i].GetOcupado() == false)
 			{
 				quartos[i].SetOcupado();
-				TotalReser += GetaID();
+				TotalReser += GetID();
 				for(int i=0; i<clientes.size(); i++)
 				{
 					if(clientes[i].GetNome() == cliente)
@@ -120,10 +108,10 @@ void Reserva::teste()
 	
 	for(int i=0; i<clientes.size(); i++)
 	{
-		clientes [i]. Info ();
+		clientes[i].Info ();
 	}
 	cout << TotalReser;
-	for(int i=0; i<10; i++)
+	for(int i=0; i<5; i++)
 	{
 		quartos[i].SetOcupado();
 	}
@@ -155,7 +143,7 @@ void Reserva::Info()
 		}
 }
 
-int Reserva::GetaID()
+int Reserva::GetID()
 {
 	return ++ID;
 }
@@ -174,21 +162,16 @@ void Reserva::listagem()
 
 void Reserva::AddQuarto()
 {
-	quartos[0].SetQuarto(1, " Normal " , 1 , 2 , 150 );
-	quartos[1].SetQuarto(2, " Normal " , 2 , 4 , 380 );
-	quartos[2].SetQuarto(3, " Normal " , 2 , 2 , 300 );
-	quartos[3].SetQuarto(4, " Normal " , 2 , 3 , 350 );
-	quartos[4].SetQuarto(5, " Normal " , 1 , 2 , 150 );
-	quartos[5].SetQuarto(6, " Normal " , 2 , 4 , 380 );
-	quartos[6].SetQuarto(7, " Luxo " , 2 , 4 , 500 );
-	quartos[7].SetQuarto(8, " Luxo " , 2 , 3 , 580 );
-	quartos[8].SetQuarto(9, " Luxo " , 2 , 2 , 430 );
-	quartos[9].SetQuarto(10, " Luxo " , 1 , 2 , 250 );
+	quartos[0].SetQuarto(1, " Simples " , 1 , 1 , 150 );
+	quartos[1].SetQuarto(2, " Simples " , 2 , 2 , 300 );
+	quartos[2].SetQuarto(3, " Simples " , 1 , 4 , 150 );
+	quartos[3].SetQuarto(4, " Luxo " , 1 , 2 , 500 );
+	quartos[4].SetQuarto(5, " Luxo " , 2 , 3 , 430 );
 }
 
 void Reserva::ConsultaQ(int N)
 {
-	for(int i=0; i< 10; i++)
+	for(int i=0; i< 5; i++)
 	{
 		if(quartos[i].GetNumero() == N)
 		{
@@ -199,7 +182,7 @@ void Reserva::ConsultaQ(int N)
 
 void Reserva::ListaQ()
 {
-	for(int i=0; i<10; i++)
+	for(int i=0; i<5; i++)
 	{
 		quartos[i].Info();
 	}

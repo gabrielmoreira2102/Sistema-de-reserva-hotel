@@ -8,53 +8,47 @@ int  main ()
 	Reserva F;
 	
 	F.AddQuarto();
-	F.AddFunc ( " Gabriel " , " 123456789 " );
-	F.AddFunc( " Bento " , " 987654321 " );
-	F.AddFunc( " Lucas " , " 123789456 " );
-
-	F.AddCli( " Michele " , " 654879236 " );
-	F.AddCli( " Roberto " , " 7896535432 " );
-	F.AddCli( " Carla " , " 3256987589 " );
-	F.AddCli( " Gustavo " , " 9465873652 " );
-	cout << " \n\n  " << endl;
-	cout << " Bem Vindo ao Hotel TABAJARA: " << endl;
-	cout << " ******************* \n\n  " << endl;
+	
+	cout << " ************************************* " << endl;
+	cout << " **   BEM VINDO AO HOTEL TABAJARA   ** " << endl;
+	cout << " *************************************\n" << endl;
 	
 	int a = 1;
-	string Cli, RGCli;
-	string FU, RGFU;
+	string Cli, CPFCli;
+	string FU, CPFFU;
 
 
 	while((a)!= 0)
 	{
-		cout << " 1-Cadastrar Cliente: " << endl;
-		cout << " 2-Cadastrar Funcionario: " << endl;
-		cout << " 3-Ver Lista de Quartos: " << endl;
-		cout << " 4-Efetuar Reserva: " << endl;
-		cout << " 5-Consulta Geral: " << endl;
-		cout << " 6-Consulta Quarto especifico: " << endl;
-		cout << " 0-Sair: " << endl;
+		cout << "\nDigite a opcao desejada" << endl;
+		cout << "\n\t1 - Cadastrar Cliente" << endl;
+		cout << "\t2 - Cadastrar Funcionario" << endl;
+		cout << "\t3 - Ver Lista de Quartos" << endl;
+		cout << "\t4 - Efetuar Reserva" << endl;
+		cout << "\t5 - Consulta Geral" << endl;
+		cout << "\t6 - Consulta Quarto especifico" << endl;
+		cout << "\t0 - Sair\n" << endl;
 
-		cin >> a;
+		cout << "Qual sua opcao: "; cin >> a;
 
 		switch(a)
 		{
 		case 1:
-			cout << " Cadastro de clientes: " << endl;
-			cout << " Nome: " << endl;
-			cin >> Cli;
-			cout << " RG: " << endl;
-			cin >> RGCli;
-			F. AddCli(Cli, RGCli);
+			cout << "\nCADASTRO DE CLIENTE" << endl;
+			cout << "\nNome: "; cin >> Cli;
+			cout << "\nCPF: "; cin >> CPFCli;
+			cout << "\n" << endl;
+			F.AddCli(Cli, CPFCli);
+			cout << "\n" << endl;
 			break;
 
 		case 2:
-			cout << " Cadastro de Funcionario: " << endl;
-			cout << " Nome: " << endl;
-			cin >> FU;
-			cout << " RG: " << endl;
-			cin >> RGCli;
-			F. AddCli(FU, RGFU);
+			cout << "\nCADASTRO DE FUNCIONARIO" << endl;
+			cout << "\nNome: "; cin >> FU;
+			cout << "\nCPF: "; 	cin >> CPFFU;
+			cout << "\n" << endl;
+			F.AddFunc(FU, CPFFU);
+			cout << "\n" << endl;
 			break;
 
 		case 3:
@@ -62,23 +56,20 @@ int  main ()
 			break;
 
 		case 4:
-			F. listagem();
-			cout << " Nova Reserva: " << endl;
-			cout << " Nome do Cliente: " << endl;
-			cin >> Cli;
-			cout << " Nome do Atendente:: " << endl;
-			cin >> FU;
+			F.listagem();
+			cout << "\nNOVA RESERVA" << endl;
+			cout << "\nNome do Cliente: "; cin >> Cli;
+			cout << "\nNome do Atendente: "; cin >> FU;
 			F. SetNovaReserva( " Gumercindo " , " Jorge " );
 			break;
 
 		case 5:
-			F. Info();
+			F.Info();
 			break;
 
 		case 6:
 			int b;
-			cout << " Numero do Quarto: " << endl;
-			cin >> b;
+			cout << "\nNumero do Quarto: "; cin >> b;
 			F. ConsultaQ(b);
 			break;
 
